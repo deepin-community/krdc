@@ -1,0 +1,4 @@
+# private library
+krdc: package-name-doesnt-match-sonames libkrdccore5
+# private library
+krdc: no-symbols-control-file

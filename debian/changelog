@@ -1,0 +1,537 @@
+krdc (4:21.08.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Bump Standards-Version to 4.6.0, no changes required.
+  * Use execute_after_dh_auto_install to avoid invoking dh_auto_install
+    manually.
+  * Add freerdp2-x11 also as build dependency, as apparently newer upstream
+    versions only build the RDP plugin when that runtime executable is found
+    at build time; thanks to Paul Hoskinson for spotting it.
+    (Closes: #992608)
+
+ -- Pino Toscano <pino@debian.org>  Sat, 21 Aug 2021 10:14:58 +0200
+
+krdc (4:21.08.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.08.0).
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 16 Aug 2021 16:24:22 +0900
+
+krdc (4:21.04.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.04.0).
+  * Drop Kubuntu from maintainer name.
+  * Added myself to the uploaders.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 28 Apr 2021 10:42:51 +0900
+
+krdc (4:20.12.3-1) unstable; urgency=medium
+
+  * Update upstream release signing key.
+  * New upstream release (20.12.3).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 09 Mar 2021 15:15:43 +0100
+
+krdc (4:20.12.0-1) unstable; urgency=medium
+
+  * New upstream release (20.12.0).
+  * Refresh copyright information.
+  * Bump Standards-Version to 4.5.1, no change required.
+  * Refresh upstream metadata.
+  * Update project homepage.
+  * Removed Eshat Cakar, George Kiagiadakis, Maximiliano Curia, Modestas
+    Vainius from the uploaders, thanks for your work on the package!
+  * Added myself to the uploaders.
+  * Build with hardening=+all build hardening flag.
+  * Borrow minimal upstream signing key from k3b.
+  * Drop kde-l10n migration rules, not needed anymore after 2 stable releases.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 04 Jan 2021 21:37:10 +0100
+
+krdc (4:20.08.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Bump the debhelper compatibility to 13:
+    - switch the debhelper-compat build dependency to 13
+
+ -- Pino Toscano <pino@debian.org>  Fri, 14 Aug 2020 00:24:33 +0200
+
+krdc (4:20.04.3-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Sandro Knauß ]
+  * Add missing license paragraph for BSD-3-clause.
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Update watch file to the new release-service location.
+  * Update the build dependencies according to the upstream build system:
+    - bump cmake to 3.0
+    - bump KF packages to 5.25.0
+    - add libkf5windowsystem-dev, and libssh-dev
+    - explicitly add gettext
+  * Drop the migration from krdc-dbg, no more needed after two Debian stable
+    releases.
+  * Switch from dhmk to the dh sequencer:
+    - invoke the dh sequencer using the kf5 addon
+    - call the right debhelper command instead of $(overridden_command)
+    - manually force the generation of the substvars for the kde-l10n breaks
+  * Bump the debhelper compatibility to 12:
+    - switch the debhelper build dependency to debhelper-compat 12
+    - remove debian/compat
+  * Add the configuration for the CI on salsa.
+  * Add Rules-Requires-Root: no.
+  * Bump Standards-Version to 4.5.0, no changes required.
+  * Update lintian overrides.
+  * Suggest freerdp2-wayland on Linux architectures, as it is the xfreerdp
+    client to use when running with Wayland.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 01 Aug 2020 17:41:37 +0200
+
+krdc (4:18.04.1-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Sandro Knauß ]
+  * Bump debhelper build-dep and compat to 11.
+  * Update Vcs links to salsa.
+  * Bump Standards-Version to 4.1.4 (No changes needed).
+  * New upstream release (18.04.1).
+  * use secure copyright format uri.
+  * update copyright file for new upstream.
+  * Replaceed freerdp-x11 with freerdp2-x11 (Closes: #898149)
+
+ -- Sandro Knauß <hefee@debian.org>  Wed, 23 May 2018 01:10:11 +0200
+
+krdc (4:17.08.3-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Maximiliano Curia ]
+  * New upstream release (17.08.1)
+  * Bump Standards-Version to 4.1.0.
+  * Update upstream metadata
+  * Update uploaders list as requested by MIA team (Closes: #879366)
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Adjust l10npkgs_firstversion_ok to the version where kde-l10n will
+    drop translations.
+  * Bump Standards-Version to 4.1.1, no changes required.
+  * Simplify watch file, and switch it to https.
+  * Stop forcing debian/tmp as local installation directory, installing
+    everything to the final location
+    - drop krdc.install, and not-installed, no more useful now
+    - make sure to not ship the development files
+
+ -- Pino Toscano <pino@debian.org>  Sat, 02 Dec 2017 15:51:08 +0100
+
+krdc (4:17.08.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Tue, 05 Sep 2017 14:02:57 +0000
+
+krdc (4:17.08.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Thu, 17 Aug 2017 09:38:39 +0000
+
+krdc (4:17.04.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 12 Jul 2017 10:23:20 +0000
+
+krdc (4:17.04.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 07 Jun 2017 12:23:03 +0000
+
+krdc (4:17.04.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Thu, 11 May 2017 18:22:02 +0000
+
+krdc (4:17.04.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 19 Apr 2017 13:05:40 +0000
+
+krdc (4:16.12.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 08 Mar 2017 13:49:50 +0000
+
+krdc (4:16.12.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 08 Feb 2017 17:01:51 +0000
+
+krdc (4:16.12.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 11 Jan 2017 13:21:19 +0000
+
+krdc (4:16.12.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 14 Dec 2016 16:30:13 +0000
+
+krdc (4:16.08.3-1) unstable; urgency=medium
+
+  * New upstream release (16.08.3)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 Nov 2016 21:15:53 +0100
+
+krdc (4:16.08.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 21 Nov 2016 13:53:59 +0000
+
+krdc (4:16.08.2-1) unstable; urgency=medium
+
+  * New upstream release (16.08.2)
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 18 Oct 2016 09:27:35 +0200
+
+krdc (4:16.08.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 14 Oct 2016 13:40:55 +0000
+
+krdc (4:16.08.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 16 Sep 2016 13:07:32 +0000
+
+krdc (4:16.08.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 17 Aug 2016 11:49:41 +0000
+
+krdc (4:16.04.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Tue, 26 Jul 2016 16:36:47 +0000
+
+krdc (4:16.04.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 23 Jun 2016 09:42:51 +0200
+
+krdc (4:16.04.1-2) unstable; urgency=medium
+
+  * Build with rdp support.
+    Thanks to Zhang Jingqiang for reporting and suggesting a fix
+    (Closes: 825468)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 01 Jun 2016 19:25:37 +0200
+
+krdc (4:16.04.1-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Bump Standards-Version to 3.9.8
+  * Update build-deps and deps with the info from cmake
+  * Refresh patches
+
+  [ Maximiliano Curia ]
+  * Replace the "Historical name" ddeb-migration by its "Modern, clearer" replacement dbgsym-migration.
+  * Add upstream metadata (DEP-12)
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Drop kde4 build deps
+  * Update install files
+  * Use the newer debian-qt-kde.mk
+  * Update install file
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 26 May 2016 11:04:17 +0200
+
+krdc (4:15.12.0-1) experimental; urgency=medium
+
+  * New upstream release (15.12.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 01 Feb 2016 10:22:24 +0100
+
+krdc (4:15.08.0-1) unstable; urgency=medium
+
+  * New upstream release (15.04.0).
+  * New upstream release (15.04.1).
+  * New upstream release (15.08.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 19 Sep 2015 19:11:01 +0200
+
+krdc (4:14.12.2-1) experimental; urgency=medium
+
+  * Prepare Debian release.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 19 Feb 2015 11:28:54 +0100
+
+krdc (4:14.12.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 10 Feb 2015 08:17:33 -0800
+
+krdc (4:14.12.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+  * Remove kdelibs5-dev depend version as there was not a new release.
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 15 Dec 2014 16:03:52 +0100
+
+krdc (4:14.11.97-0ubuntu1) vivid; urgency=medium
+
+  * New upstream RC release
+  * Merge with Debian, remaning changes:
+   - not-installed
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 28 Nov 2014 19:23:43 +0100
+
+krdc (4:4.14.1-1) unstable; urgency=medium
+
+  * New upstream release (4.14.1).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 17 Sep 2014 09:44:35 +0200
+
+krdc (4:4.13.1-3) unstable; urgency=medium
+
+  * Fix previous patch
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 28 Aug 2014 19:46:53 +0200
+
+krdc (4:4.13.1-2) unstable; urgency=medium
+
+  * New patch: fix_kfreebsd_ftbfs (Closes: #754687)
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 26 Aug 2014 23:36:50 +0200
+
+krdc (4:4.14.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Fri, 10 Oct 2014 05:58:21 -0700
+
+krdc (4:4.14.1-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Mon, 22 Sep 2014 17:29:18 +0200
+
+krdc (4:4.14.0-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 20 Aug 2014 13:20:26 +0200
+
+krdc (4:4.13.97-0ubuntu1) utopic; urgency=medium
+
+  * New upstream beta release RC
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Fri, 01 Aug 2014 17:03:52 +0200
+
+krdc (4:4.13.95-0ubuntu1) utopic; urgency=medium
+
+  * New upstream beta release
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Wed, 30 Jul 2014 18:30:15 +0200
+
+krdc (4:4.13.90-0ubuntu1) utopic; urgency=medium
+
+  [ Scarlett Clark ]
+  * New upstream beta release
+
+  [ Jonathan Riddell ]
+  * bring back debian/not-installed
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Thu, 24 Jul 2014 23:24:03 +0200
+
+krdc (4:4.13.2-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+  * Merge with Debian, no changes
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 17 Jun 2014 10:41:57 +0100
+
+krdc (4:4.13.1-1) unstable; urgency=medium
+
+  [ Adrien Grellier ]
+  * drop rdesktop recommends, as freerdp-x11 is now mandatory
+  for rdp connexions (Closes: #731395)
+
+  [ Maximiliano Curia ]
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 23 May 2014 18:26:56 +0200
+
+krdc (4:4.12.4-1) unstable; urgency=medium
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Provide a dbg package (Closes: #740294).
+
+  [ Maximiliano Curia ]
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 28 Apr 2014 12:23:56 +0200
+
+krdc (4:4.12.2-1) experimental; urgency=medium
+
+  * Bump Standards-Version to 3.9.5, no changes needed.
+  * New upstream release.
+  * Bump kde-sc-dev-latest build dependency.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 10 Feb 2014 11:31:36 +0100
+
+krdc (4:4.11.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update build dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 10 Nov 2013 11:02:20 +0100
+
+krdc (4:4.11.2-1) experimental; urgency=low
+
+  * First release of kdenetwork after being split by upstream.
+  * Add cmake license to debian/copyright.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 09 Oct 2013 14:09:23 +0200
+
+krdc (4:4.13.0-0ubuntu1) trusty; urgency=medium
+
+  * New upstream KDE Software Compilation release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 10 Apr 2014 22:12:26 +0100
+
+krdc (4:4.12.97-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release candidate
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Wed, 02 Apr 2014 11:37:53 +0200
+
+krdc (4:4.12.95-0ubuntu1) trusty; urgency=medium
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Sun, 23 Mar 2014 12:38:51 +0100
+
+krdc (4:4.12.90-0ubuntu1) trusty; urgency=medium
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 19 Mar 2014 11:09:38 +0000
+
+krdc (4:4.12.3-0ubuntu1) trusty; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Tue, 04 Mar 2014 20:58:56 +0100
+
+krdc (4:4.12.2-0ubuntu1) trusty; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Wed, 05 Feb 2014 00:11:12 +0000
+
+krdc (4:4.12.1-0ubuntu1) trusty; urgency=low
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Thu, 16 Jan 2014 08:26:28 +0000
+
+krdc (4:4.12.0-0ubuntu1) trusty; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Dec 2013 17:21:01 +0000
+
+krdc (4:4.11.97-0ubuntu1) trusty; urgency=low
+
+  * New upstream RC release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 29 Nov 2013 13:21:01 +0000
+
+krdc (4:4.11.95-0ubuntu1) trusty; urgency=low
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Mon, 25 Nov 2013 18:18:16 +0100
+
+krdc (4:4.11.80-0ubuntu1) trusty; urgency=low
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Sat, 23 Nov 2013 17:47:42 +0100
+
+krdc (4:4.11.2-0ubuntu1) saucy; urgency=low
+
+  * New upstream bugfix release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 30 Sep 2013 14:36:11 +0100
+
+krdc (4:4.11.1-0ubuntu1) saucy; urgency=low
+
+  * New upstream bugfix release.
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Fri, 06 Sep 2013 22:29:26 +0100
+
+krdc (4:4.11.0-0ubuntu1) saucy; urgency=low
+
+  [ Howard Chan ]
+  * New upstream release
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 14 Aug 2013 00:25:03 +0100
+
+krdc (4:4.10.97-0ubuntu1) saucy; urgency=low
+
+  * New upstream RC 2 release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 26 Jul 2013 19:46:44 +0100
+
+krdc (4:4.10.95-0ubuntu1) saucy; urgency=low
+
+  * New upstream RC release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Fri, 19 Jul 2013 12:32:54 +0000
+
+krdc (4:4.10.90-0ubuntu1) saucy; urgency=low
+
+  [ Jonathan Riddell ]
+  * dbg package depends not suggests main package
+
+  [ Michał Zając ]
+  * New upstream beta release
+
+  [ Philip Muškovac ]
+  * Debug package depends on = binary:Version of main package
+
+ -- Michał Zając <quintasan@kubuntu.org>  Fri, 28 Jun 2013 18:20:53 +0100
+
+krdc (4:4.10.80-0ubuntu1) saucy; urgency=low
+
+  * New upstream release
+  * Initial package, split from kdenetwork
+  * Break/replace krdc for moved file
+  * Recommend freerdp-x11 (not rdesktop)
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 21 Jun 2013 02:20:39 +0100

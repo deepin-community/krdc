@@ -1,0 +1,48 @@
+Source: krdc
+Section: kde
+Priority: optional
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Aurélien COUDERC <coucouf@debian.org>,
+           Norbert Preining <norbert@preining.info>,
+           Sune Vuorela <sune@debian.org>,
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               extra-cmake-modules (>= 5.83.0~),
+               freerdp2-x11,
+               gettext,
+               libkf5bookmarks-dev (>= 5.83.0~),
+               libkf5completion-dev (>= 5.83.0~),
+               libkf5config-dev (>= 5.83.0~),
+               libkf5dnssd-dev (>= 5.83.0~),
+               libkf5doctools-dev,
+               libkf5i18n-dev (>= 5.83.0~),
+               libkf5iconthemes-dev (>= 5.83.0~),
+               libkf5kcmutils-dev (>= 5.83.0~),
+               libkf5notifications-dev (>= 5.83.0~),
+               libkf5notifyconfig-dev (>= 5.83.0~),
+               libkf5wallet-dev (>= 5.83.0~),
+               libkf5widgetsaddons-dev (>= 5.83.0~),
+               libkf5windowsystem-dev (>= 5.83.0~),
+               libkf5xmlgui-dev (>= 5.83.0~),
+               libssh-dev,
+               libvncserver-dev (>= 0.9.8.1),
+               pkg-kde-tools (>= 0.12),
+               qtbase5-dev (>= 5.15.0~),
+Standards-Version: 4.6.0
+Rules-Requires-Root: no
+Homepage: https://apps.kde.org/en/krdc
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/kde/krdc
+Vcs-Git: https://salsa.debian.org/qt-kde-team/kde/krdc.git
+
+Package: krdc
+Section: net
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: freerdp2-x11
+Suggests: freerdp2-wayland [linux-any], khelpcenter, krfb
+Description: Remote Desktop Connection client
+ The KDE Remote Desktop Connection client can view and control a desktop
+ session running on another system.  It can connect to Windows Terminal Servers
+ using RDP and many other platforms using VNC/RFB.
+ .
+ This package is part of the KDE networking module.

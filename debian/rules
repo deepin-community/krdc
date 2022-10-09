@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@ --with kf5
+
+override_dh_auto_configure:
+	dh_auto_configure -Skf5 -- -DHAVE_XFREERDP=true
+
+execute_after_dh_auto_install:
+	# Drop development files
+	rm -rf debian/krdc/usr/include/
+	find debian/krdc -name '*.so' -type l -delete
